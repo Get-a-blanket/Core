@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GaB_Core</name>
+    </assembly>
+    <members>
+        <member name="P:GaB_Core.Controllers.Example.Product.Name">
+            <summary>
+            The name of the product
+            </summary>
+            <example>Men's basketball shoes</example>
+        </member>
+        <member name="P:GaB_Core.Controllers.Example.Product.AvailableStock">
+            <summary>
+            Quantity left in stock
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="P:GaB_Core.Controllers.Example.Product.Sizes">
+            <summary>
+            The sizes the product is available in
+            </summary>
+            <example>["Small", "Medium", "Large"]</example>
+        </member>
+        <member name="M:GaB_Core.Controllers.Example.Get(System.Int32)">
+            <summary>
+            Рандомайзер погоды
+            </summary>
+            <param name="id">Рандомный параметр</param>
+            <returns>
+            Погода в Перми
+            </returns>
+        </member>
+        <member name="M:GaB_Core.Controllers.Example.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific product by unique id
+            </summary>
+            <remarks>Awesomeness!</remarks>
+            <param name="id" example="123">The product id</param>
+            <response code="200">Product retrieved</response>
+            <response code="404">Product not found</response>
+            <response code="500">Oops! Can't lookup your product right now</response>
+        </member>
+    </members>
+</doc>
