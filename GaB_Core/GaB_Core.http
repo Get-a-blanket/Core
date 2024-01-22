@@ -1,0 +1,6 @@
+@GaB_Core_HostAddress = http://localhost:5226
+
+GET {{GaB_Core_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
