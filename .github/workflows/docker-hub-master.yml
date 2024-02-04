@@ -38,6 +38,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: GaB_Core/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/clockbox:${{env.VERSION}}
