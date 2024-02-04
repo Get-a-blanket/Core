@@ -16,13 +16,13 @@ jobs:
         name: Get version
         shell: bash
         run: |
-          read_dom () { local IFS=\> ; read -d \< E C ;}
+          read_dom () { local IFS=\> ; read -d \< ENTITY CONTENT ;}
           while read_dom; do
-            if [[ $ENTITY = "AssemblyVersion" ]]; then
+              if [[ $ENTITY = "AssemblyVersion" ]]; then
               echo "VERSION=$CONTENT" >> $GITHUB_ENV
               echo "VERSION=$CONTENT"
               exit
-            fi
+              fi
           done < GaB_Core/GaB_Core.csproj
       -
         name: Login to Docker Hub
