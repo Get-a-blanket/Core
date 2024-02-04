@@ -44,4 +44,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/clockbox:${{github.ref_name}}
+          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/clockbox:${{env.VERSION}}
