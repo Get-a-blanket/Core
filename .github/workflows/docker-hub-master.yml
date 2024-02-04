@@ -20,6 +20,7 @@ jobs:
           while read_dom; do
             if [[ $ENTITY = "AssemblyVersion" ]]; then
               echo "VERSION=$CONTENT" >> $GITHUB_ENV
+              echo "VERSION=$CONTENT"
               exit
             fi
           done < Core/GaB_Core/GaB_Core.csproj
