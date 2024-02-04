@@ -40,4 +40,4 @@ jobs:
           context: .
           file: GaB_Core/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/clockbox:${{env.VERSION}}
+          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/core:${{env.VERSION}}
