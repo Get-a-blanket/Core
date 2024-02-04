@@ -3,7 +3,7 @@ name: Docker
 on:
   push:
     branches: [ "master" ]
-    paths: ["Core/GaB_Core/GaB_Core.csproj"]
+    paths: ["GaB_Core/GaB_Core.csproj"]
 
 jobs:
   build:
