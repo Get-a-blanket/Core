@@ -34,7 +34,15 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       -
-        name: Build and push
+        name: push with version tag 
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: GaB_Core/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/core:${{env.VERSION}}
+      -
+        name: push with latest tag 
         uses: docker/build-push-action@v5
         with:
           context: .
