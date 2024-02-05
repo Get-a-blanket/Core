@@ -1,4 +1,4 @@
-name: Docker
+name: Docker-hub
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     paths: ["GaB_Core/GaB_Core.csproj"]
 
 jobs:
-  build:
+  docker-hub:
     runs-on: ubuntu-latest
     steps:
       -
@@ -40,7 +40,7 @@ jobs:
           context: .
           file: GaB_Core/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/core:${{env.VERSION}}
+          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/core:${{ env.VERSION }}
       -
         name: push with latest tag 
         uses: docker/build-push-action@v5
