@@ -40,7 +40,7 @@ jobs:
           context: .
           file: GaB_Core/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/core:${{ env.VERSION }}
+          tags: ghcr.io/${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/core:${{ env.VERSION }}
       -
         name: push with latest tag 
         uses: docker/build-push-action@v5
@@ -48,4 +48,4 @@ jobs:
           context: .
           file: GaB_Core/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/core:latest
+          tags: ghcr.io/${{ secrets.DOCKERHUB_REPOSITORY_USERNAME }}/core:latest
