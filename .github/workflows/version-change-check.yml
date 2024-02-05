@@ -18,7 +18,7 @@ jobs:
           echo "PR_NUMBER=${{ github.ref_name }}" | sed 's!/merge!!' - >> $GITHUB_ENV
           echo "PR_NUMBER=${{ github.ref_name }}" | sed 's!/merge!!' -
       - 
-        name: Get files
+        name: Version change check
         run: |
           gh pr diff ${{ env.PR_NUMBER }} --name-only
           if ! [[ $(gh pr diff ${{ env.PR_NUMBER }} | grep "<AssemblyVersion>" | grep "+") ]]; then exit 1; fi
