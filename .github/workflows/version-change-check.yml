@@ -20,7 +20,7 @@ jobs:
       - 
         name: Get files
         run: |
-          $files = gh pr view ${{ env.PR_NUMBER }} --json files --jq '.files.[].path'
-          echo $files
+          gh alias set pr_files "pr view $1 --json files --jq '.files.[].path'"
+          gh pr_files ${{ env.PR_NUMBER }} | cat
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
