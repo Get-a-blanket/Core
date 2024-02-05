@@ -63,8 +63,9 @@ jobs:
       - name: Get version
         shell: bash
         run: |
-          echo 'REPOS=$(${{ steps.meta.outputs.tags }} | sed "s!:master!!")' >> $GITHUB_ENV
-          echo 'REPOS=$(${{ steps.meta.outputs.tags }} | sed "s!:master!!")' 
+          $repo = $(echo "${{ steps.meta.outputs.tags }}" | sed "s!:master!!")
+          echo 'REPO=$repo' >> $GITHUB_ENV
+          echo 'REPO=$repo' 
           read_dom () { local IFS=\> ; read -d \< ENTITY CONTENT ;}
           while read_dom; do
             if [[ $ENTITY = "AssemblyVersion" ]]; then
@@ -83,7 +84,7 @@ jobs:
           context: .
           file: GaB_Core/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.REPOS }}:master-${{ env.VERSION }},${{ env.REPOS }}:latest
+          tags: ${{ env.REPO }}:master-${{ env.VERSION }},${{ env.REPO }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
