@@ -82,7 +82,7 @@ jobs:
           context: .
           file: GaB_Core/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.REPOS }}:${{ env.VERSION }},${{ env.REPOS }}:latest
+          tags: ${{ env.REPOS }}:master-${{ env.VERSION }},${{ env.REPOS }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
