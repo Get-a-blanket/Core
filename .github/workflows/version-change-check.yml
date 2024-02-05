@@ -15,8 +15,8 @@ jobs:
       -
         name: Get PR number
         run: |
-          echo "PR_NUMBER=${{ github.ref_name }}" | sed -E 's!/merge!' >> $GITHUB_ENV
-          echo "PR_NUMBER=${{ github.ref_name }}" | sed -E 's!/merge!'
+          echo "PR_NUMBER=${{ github.ref_name }}" | sed 's!/merge!' - >> $GITHUB_ENV
+          echo "PR_NUMBER=${{ github.ref_name }}" | sed 's!/merge!' -
       - 
         name: Get files
         run: gh pr view ${{ env.PR_NUMBER }} --json files --jq '.files.[].path'
