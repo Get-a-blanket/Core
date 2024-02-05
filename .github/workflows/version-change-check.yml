@@ -12,8 +12,13 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v4
+      -
+        name: Get PR number
+        run: |
+          echo "PR_NUMBER=${{ github.ref_name }}" | sed -E 's!/merge!' >> $GITHUB_ENV
+          echo "PR_NUMBER=${{ github.ref_name }}" | sed -E 's!/merge!'
       - 
         name: Get files
-        run: gh pr view ${{ github.ref_name }} --json files --jq '.files.[].path'
+        run: gh pr view ${{ env.PR_NUMBER }} --json files --jq '.files.[].path'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CLI_TOKEN }}
