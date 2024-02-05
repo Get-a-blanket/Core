@@ -3,14 +3,41 @@ using Microsoft.EntityFrameworkCore;
 namespace GaB_Core.ProtectedDbConnector;
 public class ApplicationContext : DbContext
 {
-    public DbSet<User> Users { get; set; } = null!;
+    protected readonly IConfiguration Configuration;
 
-    public ApplicationContext()
+    public ApplicationContext(IConfiguration configuration)
     {
-        Database.EnsureCreated();
+        Configuration = configuration;
     }
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
-        optionsBuilder.UseNpgsql(GAB_Core.ConfigurationManager.ConnectionStringProtectedDb);
+        // Подключение к postgres со строкой подключения из настроек приложений
+        options.UseNpgsql(Configuration.GetConnectionString("ProtectedDatabase"));
     }
+
+    /// <summary>
+    /// Таблица, отвечающая за инфомрацию о клиентах 
+    /// </summary>
+    public DbSet<Client> Clients { get; set; } 
+
+    /// <summary>
+    /// Таблица, отвечающая за способы оплаты
+    /// </summary>
+    public DbSet<PayM> PaymentMethod { get; set; }
+
+    /// <summary>
+    /// Таблица, отвечающая за регионы в номере 
+    /// </summary>
+    public DbSet<PhRCode> PhoneRegionCode { get; set; }
+
+    /// <summary>
+    /// Таблица, отвечающая за выдачу пледов
+    /// </summary>
+    public DbSet<ActiveB> ActiveBlankets { get; set; }
+
+    /// <summary>
+    /// Таблица, отвечающая за тарифы 
+    /// </summary>
+    public DbSet<PaymT> PaymentTariff { get; set; }
 }
