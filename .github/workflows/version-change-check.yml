@@ -20,7 +20,7 @@ jobs:
       - 
         name: Get files
         run: |
-          $files=gh pr view ${{ env.PR_NUMBER }} --json files --jq '.files.[].path'
+          $files = gh pr view ${{ env.PR_NUMBER }} --json files --jq '.files.[].path'
           echo $files
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
