@@ -63,7 +63,7 @@ jobs:
       - name: Get version
         shell: bash
         run: |
-          $repo = $(echo "${{ steps.meta.outputs.tags }}" | sed "s!:master!!")
+          repo=$(echo "${{ steps.meta.outputs.tags }}" | sed "s/:master//")
           echo 'REPO=$repo' >> $GITHUB_ENV
           echo 'REPO=$repo' 
           read_dom () { local IFS=\> ; read -d \< ENTITY CONTENT ;}
