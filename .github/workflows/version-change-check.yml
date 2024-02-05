@@ -20,7 +20,7 @@ jobs:
       - 
         name: Get files
         run: |
-          gh alias set pr_files "pr view $1 --json files --jq '.files.[].path'"
-          gh pr_files ${{ env.PR_NUMBER }} | cat
+          gh pr diff ${{ env.PR_NUMBER }} --name-only
+          gh pr diff ${{ env.PR_NUMBER }} | grep "<AssemblyVersion>"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
