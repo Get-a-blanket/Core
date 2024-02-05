@@ -6,14 +6,21 @@ on:
       - master
 
 jobs:
-  docker-hub:
+  version-check:
     runs-on: ubuntu-latest
     steps:
       -
         name: Checkout
         uses: actions/checkout@v4
+      -
+        name: Get PR number
+        run: |
+          echo "PR_NUMBER=${{ github.ref_name }}" | sed 's!/merge!!' - >> $GITHUB_ENV
+          echo "PR_NUMBER=${{ github.ref_name }}" | sed 's!/merge!!' -
       - 
         name: Get files
-        run: gh pr view ${{ GITHUB_REF_NAME }} --json files --jq '.files.[].path'
+        run: |
+          gh pr diff ${{ env.PR_NUMBER }} --name-only
+          if ! [[ $(gh pr diff ${{ env.PR_NUMBER }} | grep "<AssemblyVersion>" | grep "+") ]]; then exit 1; fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
