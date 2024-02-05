@@ -21,4 +21,4 @@ jobs:
         name: Get files
         run: gh pr view ${{ env.PR_NUMBER }} --json files --jq '.files.[].path'
         env:
-          GH_TOKEN: ${{ secrets.CLI_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
