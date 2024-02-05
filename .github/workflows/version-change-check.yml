@@ -19,6 +19,8 @@ jobs:
           echo "PR_NUMBER=${{ github.ref_name }}" | sed 's!/merge!!' -
       - 
         name: Get files
-        run: gh pr view ${{ env.PR_NUMBER }} --json files --jq '.files.[].path'
+        run: |
+          $files=gh pr view ${{ env.PR_NUMBER }} --json files --jq '.files.[].path'
+          echo $files
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
