@@ -63,6 +63,8 @@ jobs:
       - name: Get version
         shell: bash
         run: |
+          echo 'REPOS=$(${{ steps.meta.outputs.tags }} | sed "s!:master!!")' >> $GITHUB_ENV
+          echo 'REPOS=$(${{ steps.meta.outputs.tags }} | sed "s!:master!!")' 
           read_dom () { local IFS=\> ; read -d \< ENTITY CONTENT ;}
           while read_dom; do
             if [[ $ENTITY = "AssemblyVersion" ]]; then
@@ -71,7 +73,6 @@ jobs:
               exit
             fi
           done < GaB_Core/GaB_Core.csproj
-          echo 'REPOS=$(${{ steps.meta.outputs.tags }} | sed "s!:master!!")'
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
