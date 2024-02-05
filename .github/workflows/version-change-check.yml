@@ -21,6 +21,6 @@ jobs:
         name: Get files
         run: |
           gh pr diff ${{ env.PR_NUMBER }} --name-only
-          gh pr diff ${{ env.PR_NUMBER }} | grep "<AssemblyVersion>"
+          if ! [[ $(gh pr diff ${{ env.PR_NUMBER }} | grep "<AssemblyVersion>" | grep "+") ]]; then exit 1; fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
