@@ -1,0 +1,19 @@
+name: version-change-check
+
+on:
+  pull_request:
+    branches:    
+      - master
+
+jobs:
+  docker-hub:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      - 
+        name: Get files
+        run: gh pr view ${{ GITHUB_REF_NAME }} --json files --jq '.files.[].path'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
