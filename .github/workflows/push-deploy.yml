@@ -32,16 +32,17 @@ jobs:
         with:
           dotnet-version: '8'
           
-      - name: Create migrations
+      - name: Setup dotnet-ef
         run: |
           dotnet tool install --global dotnet-ef
+
+      - name: Create migrations
+        run: |
           dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext --project ./GaB_Core
           dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.ProtectedDbConnector.ProtectedDbContext --project ./GaB_Core
       
       - name: Commit to deploy
         shell: bash
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
