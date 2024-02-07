@@ -41,12 +41,20 @@ jobs:
           dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext --project ./GaB_Core
           dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.ProtectedDbConnector.ProtectedDbContext --project ./GaB_Core
       
-      - name: Commit to deploy
-        shell: bash
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-          git add GaB_Core/Migrations
-          git commit -m "Auto created migrations"
-          git push --force origin master 
-          git push --force origin deploy 
+      - name: Push files and tag
+        uses: Amraneze/push-to-protected-branch@latest
+        with:
+          repository: ${{ github.repository }}
+          branch_name: master
+          github_token: ${{ secrets.GITHUB_TOKEN  }}
+          commit_message: 'Auto created migrations'
+          files_to_commit: 'GaB_Core/Migrations'
+      # - name: Commit to deploy
+      #   shell: bash
+      #   run: |
+      #     git config user.name "GitHub Actions Bot"
+      #     git config user.email "<>"
+      #     git add GaB_Core/Migrations
+      #     git commit -m "Auto created migrations"
+      #     git push --force origin master 
+      #     git push --force origin deploy 
