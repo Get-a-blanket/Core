@@ -41,12 +41,12 @@ jobs:
       - name: Commit to deploy
         shell: bash
         env: 
-          CI_COMMIT_MESSAGE: create migration  
-          CI_COMMIT_AUTHOR: Continuous Integration
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "GitHub Action"
-          git config --global user.email "info@getablanket.ru"
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
           git add GaB_Core/Migrations
           git commit -m "Auto created migrations"
-          git push
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push origin master
           git push origin deploy
