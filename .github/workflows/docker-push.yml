@@ -1,9 +1,10 @@
-name: Docker-hub
+name: Docker-push
 
 on:
   push:
-    branches: [ "master" ]
-    paths: ["GaB_Core/GaB_Core.csproj"]
+    branches: [ "deploy" ]
+    paths: ["GaB_Core/GaB_Core.csproj", "GaB_Core/Migrations/**"]
+
 
 
 env:
@@ -83,7 +84,7 @@ jobs:
           context: .
           file: GaB_Core/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ env.REPO }}:master-${{ env.VERSION }},${{ env.REPO }}:latest
+          tags: ${{ env.REPO }}:${{ github.ref_name }}-${{ env.VERSION }},${{ env.REPO }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max

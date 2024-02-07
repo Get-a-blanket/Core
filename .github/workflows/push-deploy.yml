@@ -1,0 +1,49 @@
+name: Push-deploy
+
+on:
+  push:
+    branches: [ "master" ]
+    paths: ["GaB_Core/GaB_Core.csproj"]
+
+jobs: 
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get version
+        shell: bash
+        run: |
+          repo=$(echo "${{ steps.meta.outputs.tags }}" | sed "s/:master//")
+          echo "REPO=$repo" >> $GITHUB_ENV
+          echo "REPO=$repo" 
+          read_dom () { local IFS=\> ; read -d \< ENTITY CONTENT ;}
+          while read_dom; do
+            if [[ $ENTITY = "AssemblyVersion" ]]; then
+              echo "VERSION=$CONTENT" >> $GITHUB_ENV
+              echo "VERSION=$CONTENT"
+              exit
+            fi
+          done < GaB_Core/GaB_Core.csproj
+
+      - name: Create migrations
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8'
+        run: |
+          dotnet tool install --global dotnet-ef
+          dotnet ef migrations add ${{ env.VERSION }} -Context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext
+          dotnet ef migrations add ${{ env.VERSION }} -Context GaB_Core.ProtectedDbConnector.ProtectedDbContext
+      
+      - name: Commit to deploy
+        shell: bash
+        env: 
+          CI_COMMIT_MESSAGE: create migration  
+          CI_COMMIT_AUTHOR: Continuous Integration
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "info@getablanket.ru"
+          git add GaB_Core/Migrations
+          git commit -m "Auto created migrations"
+          git push origin deploy
