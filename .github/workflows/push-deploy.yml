@@ -48,5 +48,5 @@ jobs:
           git config user.email "<>"
           git add GaB_Core/Migrations
           git commit -m "Auto created migrations"
-          git push origin master --force
-          git push origin deploy --force
+          git push --force origin master 
+          git push --force origin deploy 
