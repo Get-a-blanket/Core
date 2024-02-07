@@ -42,7 +42,7 @@ jobs:
           dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.ProtectedDbConnector.ProtectedDbContext --project ./GaB_Core
       
       - name: Push files and tag
-        uses: Amraneze/push-to-protected-branch@latest
+        uses: Amraneze/push-to-protected-branch@v1.5.0
         with:
           repository: ${{ github.repository }}
           branch_name: master
