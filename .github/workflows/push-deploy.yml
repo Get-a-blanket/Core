@@ -27,10 +27,12 @@ jobs:
             fi
           done < GaB_Core/GaB_Core.csproj
 
-      - name: Create migrations
+      - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8'
+          
+      - name: Create migrations
         run: |
           dotnet tool install --global dotnet-ef
           dotnet ef migrations add ${{ env.VERSION }} -Context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext
