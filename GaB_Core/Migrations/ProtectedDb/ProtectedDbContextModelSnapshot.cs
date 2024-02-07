@@ -43,7 +43,7 @@ namespace GaB_Core.Migrations
 
                     b.HasIndex("PaymentTariffId");
 
-                    b.ToTable("ActiveBlankets");
+                    b.ToTable("ActiveBlankets", (string)null);
                 });
 
             modelBuilder.Entity("GaB_Core.ProtectedDbConnector.Models.Client", b =>
@@ -68,7 +68,7 @@ namespace GaB_Core.Migrations
 
                     b.HasIndex("PhoneRegionCodeId");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Clients", (string)null);
                 });
 
             modelBuilder.Entity("GaB_Core.ProtectedDbConnector.Models.PaymentTariff", b =>
@@ -88,7 +88,7 @@ namespace GaB_Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PaymentTariff");
+                    b.ToTable("PaymentTariff", (string)null);
                 });
 
             modelBuilder.Entity("GaB_Core.ProtectedDbConnector.Models.PhoneRegionCode", b =>
@@ -104,7 +104,7 @@ namespace GaB_Core.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PhoneRegionCode");
+                    b.ToTable("PhoneRegionCode", (string)null);
                 });
 
             modelBuilder.Entity("GaB_Core.ProtectedDbConnector.Models.ActiveBlanket", b =>

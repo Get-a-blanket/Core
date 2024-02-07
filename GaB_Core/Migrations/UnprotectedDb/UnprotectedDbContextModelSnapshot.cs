@@ -48,7 +48,7 @@ namespace GaB_Core.Migrations.UnprotectedDb
 
                     b.HasKey("Id");
 
-                    b.ToTable("VendingMachines");
+                    b.ToTable("VendingMachines", (string)null);
                 });
 #pragma warning restore 612, 618
         }

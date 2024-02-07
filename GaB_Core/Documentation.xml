@@ -78,6 +78,18 @@
         <member name="M:GaB_Core.Migrations.FKs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:GaB_Core.Migrations._00211">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._00211.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._00211.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._00211.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:GaB_Core.Migrations.UnprotectedDb.InitialCreate">
             <inheritdoc />
         </member>
