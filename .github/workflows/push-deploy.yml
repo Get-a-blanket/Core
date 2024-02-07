@@ -35,8 +35,8 @@ jobs:
       - name: Create migrations
         run: |
           dotnet tool install --global dotnet-ef
-          dotnet ef migrations add ${{ env.VERSION }} -Context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext
-          dotnet ef migrations add ${{ env.VERSION }} -Context GaB_Core.ProtectedDbConnector.ProtectedDbContext
+          dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext --project ./GaB_Core
+          dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.ProtectedDbConnector.ProtectedDbContext --project ./GaB_Core
       
       - name: Commit to deploy
         shell: bash
@@ -48,4 +48,5 @@ jobs:
           git config --global user.email "info@getablanket.ru"
           git add GaB_Core/Migrations
           git commit -m "Auto created migrations"
+          git push
           git push origin deploy
