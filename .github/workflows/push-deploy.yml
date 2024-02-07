@@ -30,19 +30,19 @@ jobs:
             fi
           done < GaB_Core/GaB_Core.csproj
 
-      # - name: Setup dotnet
-      #   uses: actions/setup-dotnet@v3
-      #   with:
-      #     dotnet-version: '8'
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8'
           
-      # - name: Setup dotnet-ef
-      #   run: |
-      #     dotnet tool install --global dotnet-ef
+      - name: Setup dotnet-ef
+        run: |
+          dotnet tool install --global dotnet-ef
 
-      # - name: Create migrations
-      #   run: |
-      #     dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext --project ./GaB_Core
-      #     dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.ProtectedDbConnector.ProtectedDbContext --project ./GaB_Core
+      - name: Create migrations
+        run: |
+          dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext --project ./GaB_Core
+          dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.ProtectedDbConnector.ProtectedDbContext --project ./GaB_Core
       
       - name: Commit
         shell: bash
