@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GaB_Core</name>
+    </assembly>
+    <members>
+        <member name="P:GaB_Core.Controllers.Example.Product.Name">
+            <summary>
+            The name of the product
+            </summary>
+            <example>Men's basketball shoes</example>
+        </member>
+        <member name="P:GaB_Core.Controllers.Example.Product.AvailableStock">
+            <summary>
+            Quantity left in stock
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="P:GaB_Core.Controllers.Example.Product.Sizes">
+            <summary>
+            The sizes the product is available in
+            </summary>
+            <example>["Small", "Medium", "Large"]</example>
+        </member>
+        <member name="M:GaB_Core.Controllers.Example.Get(System.Int32)">
+            <summary>
+            Рандомайзер погоды
+            </summary>
+            <param name="id">Рандомный параметр</param>
+            <returns>
+            Погода в Перми
+            </returns>
+        </member>
+        <member name="M:GaB_Core.Controllers.Example.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific product by unique id
+            </summary>
+            <remarks>Awesomeness!</remarks>
+            <param name="id" example="123">The product id</param>
+            <response code="200">Product retrieved</response>
+            <response code="404">Product not found</response>
+            <response code="500">Oops! Can't lookup your product right now</response>
+        </member>
+        <member name="T:GaB_Core.Controllers.MapController">
+            <summary>
+             Контроллер функций карты 
+            </summary>
+        </member>
+        <member name="M:GaB_Core.Controllers.MapController.GetAllVendingMachneInformation">
+            <summary>
+            Выдать полный список всех доступных автоматов
+            </summary>
+            <returns>
+            Список всех вендиговых аппаратов
+            </returns>
+        </member>
+        <member name="T:GaB_Core.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.Migrations.FKs">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.FKs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.FKs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.FKs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb.FKs">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.FKs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.FKs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.FKs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb.AddAddressVM">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.AddAddressVM.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.AddAddressVM.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.AddAddressVM.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
+            <summary>
+            Таблица, отвечающая за инфомрацию о клиентах 
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.PhoneRegionCode">
+            <summary>
+            Таблица, отвечающая за регионы в номере 
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.ActiveBlankets">
+            <summary>
+            Таблица, отвечающая за выдачу пледов
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.PaymentTariff">
+            <summary>
+            Таблица, отвечающая за тарифы 
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.Id">
+            <summary>
+            GUID аппарата
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.NumberOfCellsWBlankets">
+            <summary>
+            Количество пледов готовых к выдаче
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.NumberOfEmptyCells">
+            <summary>
+            Количество ячеек для возврата
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.Longitude">
+            <summary>
+            Долгота
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.Latitude">
+            <summary>
+            Широта
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.Description">
+            <summary>
+            Полное описание местоположения автомата
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.Address">
+            <summary>
+            Краткое описание местоположения
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.UnprotectedDbContext.VendingMachines">
+            <summary>
+            Таблица, отвечающая за инфомрацию о вендинговых аппаратах
+            </summary>
+        </member>
+    </members>
+</doc>

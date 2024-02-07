@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
-using System.Numerics;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace GaB_Core.ProtectedDbConnector.Models
 {
     public class Client
     {
+        [Key]
         public Guid Id { get; set; }
 
-        public Int16 PhoneRegionCodeId { get; set; } 
+        //public Int16 PhoneRegionCodeId { get; set; } 
 
         public Int64 PhoneNumber { get; set; } 
 
@@ -15,10 +15,9 @@ namespace GaB_Core.ProtectedDbConnector.Models
 
         public DateTime DateOfRegistration { get; set; }
 
-        public PhRCode PhoneRegionCode { get; set; }
+        public PhoneRegionCode PhoneRegionCode { get; set; }
 
-        public ICollection<ActiveB> ActiveBlankets { get; set; }
+        public ICollection<ActiveBlanket> ActiveBlankets { get; set; }
 
-        public ICollection<PayM> PaymentMethod { get; set; }
     }
 }

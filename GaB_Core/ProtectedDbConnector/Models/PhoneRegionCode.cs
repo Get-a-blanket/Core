@@ -1,7 +1,10 @@
-﻿namespace GaB_Core.ProtectedDbConnector.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace GaB_Core.ProtectedDbConnector.Models
 {
-    public class PhRCode
+    public class PhoneRegionCode
     {
+        [Key]
         public Int16 Id {  get; set; } 
 
         public string Name { get; set; }

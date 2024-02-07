@@ -1,11 +1,13 @@
 ﻿using GaB_Core.ProtectedDbConnector.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 namespace GaB_Core.ProtectedDbConnector;
-public class ApplicationContext : DbContext
+
+public class ProtectedDbContext : DbContext
 {
     protected readonly IConfiguration Configuration;
 
-    public ApplicationContext(IConfiguration configuration)
+    public ProtectedDbContext(IConfiguration configuration)
     {
         Configuration = configuration;
     }
@@ -15,6 +17,14 @@ public class ApplicationContext : DbContext
         // Подключение к postgres со строкой подключения из настроек приложений
         options.UseNpgsql(Configuration.GetConnectionString("ProtectedDatabase"));
     }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // TODO: заполнять типы тарифов если они не заполнены https://metanit.com/sharp/efcore/2.14.php
+        //modelBuilder.Entity<PaymentTariff>().HasData(
+        //    new PaymentTariff { },
+        //    new PaymentTariff { }
+        //);
+    }
 
     /// <summary>
     /// Таблица, отвечающая за инфомрацию о клиентах 
@@ -22,22 +32,17 @@ public class ApplicationContext : DbContext
     public DbSet<Client> Clients { get; set; } 
 
     /// <summary>
-    /// Таблица, отвечающая за способы оплаты
-    /// </summary>
-    public DbSet<PayM> PaymentMethod { get; set; }
-
-    /// <summary>
     /// Таблица, отвечающая за регионы в номере 
     /// </summary>
-    public DbSet<PhRCode> PhoneRegionCode { get; set; }
+    public DbSet<PhoneRegionCode> PhoneRegionCode { get; set; }
 
     /// <summary>
     /// Таблица, отвечающая за выдачу пледов
     /// </summary>
-    public DbSet<ActiveB> ActiveBlankets { get; set; }
+    public DbSet<ActiveBlanket> ActiveBlankets { get; set; }
 
     /// <summary>
     /// Таблица, отвечающая за тарифы 
     /// </summary>
-    public DbSet<PaymT> PaymentTariff { get; set; }
+    public DbSet<PaymentTariff> PaymentTariff { get; set; }
 }
