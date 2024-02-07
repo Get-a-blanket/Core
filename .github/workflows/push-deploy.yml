@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ssh-key: ${{ secrets.SECRET_PUSH_KEY }}
+          fetch-depth: 0
 
       - name: Get version
         shell: bash
@@ -29,28 +30,36 @@ jobs:
             fi
           done < GaB_Core/GaB_Core.csproj
 
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8'
+      # - name: Setup dotnet
+      #   uses: actions/setup-dotnet@v3
+      #   with:
+      #     dotnet-version: '8'
           
-      - name: Setup dotnet-ef
-        run: |
-          dotnet tool install --global dotnet-ef
+      # - name: Setup dotnet-ef
+      #   run: |
+      #     dotnet tool install --global dotnet-ef
 
-      - name: Create migrations
-        run: |
-          dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext --project ./GaB_Core
-          dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.ProtectedDbConnector.ProtectedDbContext --project ./GaB_Core
+      # - name: Create migrations
+      #   run: |
+      #     dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.UnprotectedDbConnector.UnprotectedDbContext --project ./GaB_Core
+      #     dotnet ef migrations add ${{ env.VERSION }} --context GaB_Core.ProtectedDbConnector.ProtectedDbContext --project ./GaB_Core
       
-      - name: Commit to deploy
+      - name: Commit
         shell: bash
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git add GaB_Core/Migrations
           git commit -m "Auto created migrations"
+
+      - name: Push master
+        shell: bash
+        run: |
           git push origin master 
+
+      - name: Push deploy
+        shell: bash
+        run: |
           git checkout deploy
           git merge master
           git push origin deploy 
