@@ -9,6 +9,6 @@ namespace GaB_Core.ProtectedDbConnector.Models
 
         public string Name { get; set; }
 
-        public ICollection<Client> Clients { get; set; }
+        //public ICollection<Client> Clients { get; set; }
     }
 }
