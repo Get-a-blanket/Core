@@ -13,6 +13,6 @@ namespace GaB_Core.ProtectedDbConnector.Models
 
         public decimal Price { get; set; }
 
-        public ICollection<ActiveBlanket> ActiveBlankets { get; set; }
+        //public ICollection<ActiveBlanket> ActiveBlankets { get; set; }
     }
 }

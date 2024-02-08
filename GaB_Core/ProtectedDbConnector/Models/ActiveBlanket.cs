@@ -14,7 +14,7 @@ namespace GaB_Core.ProtectedDbConnector.Models
 
         public DateTime DataOfIssue { get; set; }
 
-        public Client Client {get; set; }
+        public Client Client { get; set; }
 
         public PaymentTariff PaymentTariff { get; set; }
     }
