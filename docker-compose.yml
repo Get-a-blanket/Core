@@ -2,7 +2,24 @@ version: '3.4'
 
 services:
   gab_core:
-    image: ${DOCKER_REGISTRY-}gabcore
+    # image: ${DOCKER_REGISTRY-}gabcore
     build:
       context: .
-      dockerfile: GaB_Core/Dockerfile
+      dockerfile: GaB_Core/dev.Dockerfile
+
+  postgresql:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+
+networks:
+  default:
+  
+volumes:
+  db-data:
+    external: true

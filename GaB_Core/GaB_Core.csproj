@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
+	<UserSecretsId>d21b6399-c006-40f3-97d0-b6c57097bec6</UserSecretsId>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>false</InvariantGlobalization>
-    <UserSecretsId>d21b6399-c006-40f3-97d0-b6c57097bec6</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<DocumentationFile>Documentation.xml</DocumentationFile>
@@ -13,8 +13,9 @@
 	<Company>Get a Blanket</Company>
 	<Authors>Get a Blanket</Authors>
 	<Product>Core</Product>
-	<AssemblyVersion>0.0.3.0</AssemblyVersion>
+	<AssemblyVersion>0.0.3.1</AssemblyVersion>
 	<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+	<ContainerDevelopmentMode>Regular</ContainerDevelopmentMode>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
