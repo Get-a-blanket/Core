@@ -52,15 +52,21 @@ jobs:
           git add GaB_Core/Migrations
           git add GaB_Core/Documentation.xml
           git commit -m "Auto created migrations"
+          git tag ${{ env.VERSION }}
 
       - name: Push master
         shell: bash
         run: |
-          git push origin master ${{ env.VERSION }}
+          git push origin master 
 
       - name: Push deploy
         shell: bash
         run: |
           git checkout --force deploy
           git merge master
-          git push origin deploy ${{ env.VERSION }}
+          git push origin deploy 
+      
+      - name: Push tags
+        shell: bash
+        run: |
+          git push origin --tags
