@@ -90,6 +90,18 @@
         <member name="M:GaB_Core.Migrations._0030.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:GaB_Core.Migrations._0033">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0033.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0033.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0033.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:GaB_Core.Migrations.UnprotectedDb.InitialCreate">
             <inheritdoc />
         </member>
@@ -136,6 +148,30 @@
             <inheritdoc />
         </member>
         <member name="M:GaB_Core.Migrations.UnprotectedDb._0030.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb._0033">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0033.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0033.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0033.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb._0036">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0036.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0036.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0036.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
