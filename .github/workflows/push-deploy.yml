@@ -56,11 +56,11 @@ jobs:
       - name: Push master
         shell: bash
         run: |
-          git push origin master --tags ${{ env.VERSION }}
+          git push origin master ${{ env.VERSION }}
 
       - name: Push deploy
         shell: bash
         run: |
           git checkout --force deploy
           git merge master
-          git push origin deploy --tags ${{ env.VERSION }}
+          git push origin deploy ${{ env.VERSION }}
