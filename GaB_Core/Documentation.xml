@@ -102,6 +102,18 @@
         <member name="M:GaB_Core.Migrations._0033.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:GaB_Core.Migrations._0036">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0036.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0036.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0036.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:GaB_Core.Migrations.UnprotectedDb.InitialCreate">
             <inheritdoc />
         </member>
@@ -174,6 +186,18 @@
         <member name="M:GaB_Core.Migrations.UnprotectedDb._0036.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb.addCodeOfVendingMachine">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.addCodeOfVendingMachine.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.addCodeOfVendingMachine.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb.addCodeOfVendingMachine.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
             <summary>
             Таблица, отвечающая за инфомрацию о клиентах 
@@ -227,6 +251,11 @@
         <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.Address">
             <summary>
             Краткое описание местоположения
+            </summary>
+        </member>
+        <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.Code">
+            <summary>
+            Код автомата
             </summary>
         </member>
         <member name="P:GaB_Core.UnprotectedDbConnector.UnprotectedDbContext.VendingMachines">

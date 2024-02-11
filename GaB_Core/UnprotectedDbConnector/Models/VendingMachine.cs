@@ -2,6 +2,9 @@
 
 namespace GaB_Core.UnprotectedDbConnector.Models
 {
+    /// <summary>
+    /// Описание вендингового аппарата
+    /// </summary>
     public class VendingMachine
     {
         /// <summary>
@@ -33,11 +36,19 @@ namespace GaB_Core.UnprotectedDbConnector.Models
         /// <summary>
         /// Полное описание местоположения автомата
         /// </summary>
+        [Required]
         public string Description { get; set; }
 
         /// <summary>
         /// Краткое описание местоположения
         /// </summary>
+        [Required]
         public string Address { get; set; }
+
+        /// <summary>
+        /// Код автомата
+        /// </summary>
+        [Required]
+        public int Code { get; set; }
     }
 }
