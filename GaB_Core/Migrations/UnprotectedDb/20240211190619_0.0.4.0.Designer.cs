@@ -3,6 +3,7 @@ using System;
 using GaB_Core.UnprotectedDbConnector;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GaB_Core.Migrations.UnprotectedDb
 {
     [DbContext(typeof(UnprotectedDbContext))]
-    partial class UnprotectedDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240211190619_0.0.4.0")]
+    partial class _0040
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

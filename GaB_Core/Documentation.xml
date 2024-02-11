@@ -186,16 +186,16 @@
         <member name="M:GaB_Core.Migrations.UnprotectedDb._0036.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb.addCodeOfVendingMachine">
+        <member name="T:GaB_Core.Migrations.UnprotectedDb._0040">
             <inheritdoc />
         </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.addCodeOfVendingMachine.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0040.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.addCodeOfVendingMachine.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0040.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.addCodeOfVendingMachine.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0040.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
@@ -216,6 +216,11 @@
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.PaymentTariff">
             <summary>
             Таблица, отвечающая за тарифы 
+            </summary>
+        </member>
+        <member name="T:GaB_Core.UnprotectedDbConnector.Models.VendingMachine">
+            <summary>
+            Описание вендингового аппарата
             </summary>
         </member>
         <member name="P:GaB_Core.UnprotectedDbConnector.Models.VendingMachine.Id">
