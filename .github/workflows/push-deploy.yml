@@ -50,17 +50,17 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git add GaB_Core/Migrations
+          git add GaB_Core/Documentation.xml
           git commit -m "Auto created migrations"
-          git tag ${{ env.VERSION }}
 
       - name: Push master
         shell: bash
         run: |
-          git push origin master 
+          git push origin master --tags ${{ env.VERSION }}
 
       - name: Push deploy
         shell: bash
         run: |
-          git checkout deploy
+          git checkout --force deploy
           git merge master
-          git push origin deploy 
+          git push origin deploy --tags ${{ env.VERSION }}
