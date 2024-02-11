@@ -51,6 +51,7 @@ jobs:
           git config user.email "<>"
           git add GaB_Core/Migrations
           git commit -m "Auto created migrations"
+          git tag ${{ env.VERSION }}
 
       - name: Push master
         shell: bash
