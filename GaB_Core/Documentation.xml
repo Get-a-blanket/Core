@@ -4,6 +4,99 @@
         <name>GaB_Core</name>
     </assembly>
     <members>
+        <member name="T:GaB_Core.Controllers.ActiveBlanketsController">
+            <summary>
+            Контроллер управления активными пледами (находящимеся в аренде)
+            </summary>
+        </member>
+        <member name="M:GaB_Core.Controllers.ActiveBlanketsController.GetActiveBlankets">
+            <summary>
+            Получить полный список пледов в аренде
+            </summary>
+            <response code="200">Данные о всех пледах</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ActiveBlanketsController.GetActiveBlanket(System.Guid)">
+            <summary>
+            Получить конкретный плед по ID
+            </summary>
+            <param name="id">GUID пледа</param>
+            <response code="200">Данные о конкретном пледе</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ActiveBlanketsController.PutActiveBlanket(System.Guid,GaB_Core.ProtectedDbConnector.Models.ActiveBlanket)">
+            <summary>
+            Изменить данные о активном пледе
+            </summary>
+            <param name="id">GUID пледа</param>
+            <param name="activeBlanket">Полное представление активного пледа</param>
+            <returns></returns>
+            <response code="204">Данные о пледе изменены</response>
+            <response code="400">GUID не совпадают</response>
+            <response code="404">Не найден плед</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ActiveBlanketsController.PostActiveBlanket(GaB_Core.ProtectedDbConnector.Models.ActiveBlanket)">
+            <summary>
+            Создать новый активный плед
+            </summary>
+            <param name="activeBlanket">Полное представление активного пледа</param>
+            <response code="200">Данные сохранены</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ActiveBlanketsController.DeleteActiveBlanket(System.Guid)">
+            <summary>
+            Удалить активный плед
+            </summary>
+            <param name="id">GUID пледа</param>
+            <response code="200">Данные о пледе удалены</response>
+            <response code="404">Не найден плед</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ClientsController.GetClients">
+            <summary>
+            Получить полный список клиентов
+            </summary>
+            <response code="200">Данные о всех клиентах</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ClientsController.GetClient(System.Guid)">
+            <summary>
+            Получить конкретного клиента по ID
+            </summary>
+            <param name="id">GUID клиента</param>
+            <response code="200">Данные о конкретном клиенте</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ClientsController.PutClient(System.Guid,GaB_Core.ProtectedDbConnector.Models.Client)">
+            <summary>
+            Изменить данные о клиенте
+            </summary>
+            <param name="id">GUID клиента</param>
+            <param name="client">Полное представление клиента</param>
+            <returns></returns>
+            <response code="204">Данные о клиенте изменены</response>
+            <response code="400">GUID не совпадают</response>
+            <response code="404">Не найден клиент</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ClientsController.PostClient(GaB_Core.ProtectedDbConnector.Models.Client)">
+            <summary>
+            Создать нового клиента
+            </summary>
+            <param name="client">Полное представление клиента</param>
+            <response code="200">Данные сохранены</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
+        <member name="M:GaB_Core.Controllers.ClientsController.DeleteClient(System.Guid)">
+            <summary>
+            Удалить клиента
+            </summary>
+            <param name="id">GUID клиента</param>
+            <response code="200">Данные о кллиенте удалены</response>
+            <response code="404">Не найден клиент</response>
+            <response code="500">Ошибка базы данных</response>
+        </member>
         <member name="P:GaB_Core.Controllers.Example.Product.Name">
             <summary>
             The name of the product
@@ -137,6 +230,71 @@
         </member>
         <member name="M:GaB_Core.Migrations.UnprotectedDb.Lab4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.ProtectedDbConnector.Models.ActiveBlanket">
+            <summary>
+            Плед взятый в данный момент в аренду
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.ActiveBlanket.Id">
+            <summary>
+            GUID активного пледа
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.ActiveBlanket.DataOfIssue">
+            <summary>
+            ДатаВремя выдачи
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.ActiveBlanket.PaymentTariff">
+            <summary>
+            Тип тарифа, по которому выдан плед
+            </summary>
+        </member>
+        <member name="T:GaB_Core.ProtectedDbConnector.Models.Client">
+            <summary>
+            Аккаунт клиента
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.Client.Id">
+            <summary>
+            GUID клиента 
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.Client.PhoneNumber">
+            <summary>
+            Номер телефона клиента
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.Client.Email">
+            <summary>
+            E-mail
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.Client.DateOfRegistration">
+            <summary>
+            Дата регистрации
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.Client.ActiveBlankets">
+            <summary>
+            Пледы находящиеся в аренде
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.PaymentTariff.Id">
+            <summary>
+            GUID тарифа
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.PaymentTariff.Name">
+            <summary>
+            Отображаемое короткое имя
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.PaymentTariff.Description">
+            <summary>
+            Описание тарифа
+            </summary>
         </member>
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
             <summary>
