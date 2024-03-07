@@ -25,30 +25,30 @@ jobs:
       - name: Get Status 
         shell: bash
         run: |
-          curl -X 'GET' \
+          docker exec docker-compose-gab_core-1 curl -X 'GET' \
             'http://127.0.0.1:8080/System/Status' \
             -H 'accept: text/plain' -k 
-          curl -X 'GET' \
+          docker exec docker-compose-gab_core-1 curl -X 'GET' \
             'http://127.0.0.1:8080/System/Status' \
             -H 'accept: text/plain' -k  -I
 
       - name: Get ProtectedDB Migrations
         shell: bash
         run: |
-          curl -X 'GET' \
+          docker exec docker-compose-gab_core-1 curl -X 'GET' \
             'http://127.0.0.1:8080/System/GetProtectedDBMigrations' \
             -H 'accept: text/plain' -k 
-          curl -X 'GET' \
+          docker exec docker-compose-gab_core-1 curl -X 'GET' \
             'http://127.0.0.1:8080/System/GetProtectedDBMigrations' \
             -H 'accept: text/plain' -k -I
 
       - name: Get UnprotectedDB Migrations 
         shell: bash
         run: |
-          curl -X 'GET' \
+          docker exec docker-compose-gab_core-1 curl -X 'GET' \
             'http://127.0.0.1:8080/System/GetUnprotectedDBMigrations' \
             -H 'accept: text/plain' -k 
-          curl -X 'GET' \
+          docker exec docker-compose-gab_core-1 curl -X 'GET' \
             'http://127.0.0.1:8080/System/GetUnprotectedDBMigrations' \
             -H 'accept: text/plain' -k -I
 
