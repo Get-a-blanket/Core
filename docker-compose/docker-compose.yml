@@ -6,6 +6,12 @@ services:
     build:
       context: ..
       dockerfile: GaB_Core/dev.Dockerfile
+    environment:
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+    ports:
+      - "8080:8080"
+      - "8081:8081"
 
   postgresql:
     image: postgres:16
@@ -14,8 +20,6 @@ services:
       POSTGRES_PASSWORD: admin
     volumes:
       - db-data:/var/lib/postgresql/data
-    ports:
-      - 5433:5432
 
 networks:
   default:

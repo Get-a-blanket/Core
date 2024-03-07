@@ -22,30 +22,30 @@ jobs:
         shell: bash
         run: |
           curl -X 'GET' \
-            'https://localhost:57512/System/Status' \
+            'http://localhost:8080/System/Status' \
             -H 'accept: text/plain' -k 
           curl -X 'GET' \
-            'https://localhost:57512/System/Status' \
+            'http://localhost:8080/System/Status' \
             -H 'accept: text/plain' -k  -I
 
       - name: Get ProtectedDB Migrations
         shell: bash
         run: |
           curl -X 'GET' \
-            'https://localhost:57512/System/GetProtectedDBMigrations' \
+            'http://localhost:8080/System/GetProtectedDBMigrations' \
             -H 'accept: text/plain' -k 
           curl -X 'GET' \
-            'https://localhost:57512/System/GetProtectedDBMigrations' \
+            'http://localhost:8080/System/GetProtectedDBMigrations' \
             -H 'accept: text/plain' -k -I
 
       - name: Get UnprotectedDB Migrations 
         shell: bash
         run: |
           curl -X 'GET' \
-            'https://localhost:57512/System/GetUnprotectedDBMigrations' \
+            'http://localhost:8080/System/GetUnprotectedDBMigrations' \
             -H 'accept: text/plain' -k 
           curl -X 'GET' \
-            'https://localhost:57512/System/GetUnprotectedDBMigrations' \
+            'http://localhost:8080/System/GetUnprotectedDBMigrations' \
             -H 'accept: text/plain' -k -I
 
   push:
