@@ -14,7 +14,7 @@ jobs:
 
       - name: docker-compose up
         shell: bash 
-        run: docker compose up -d -f docker-compose/docker-compose.yml
+        run: docker compose -f docker-compose/docker-compose.yml up -d
 
       - name: Get Status 
         shell: bash
