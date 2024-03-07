@@ -18,6 +18,10 @@ jobs:
           docker volume create db-data
           docker compose -f docker-compose/docker-compose.yml up -d
 
+      - name: docker ps
+        shell: bash 
+        run: docker ps -a
+
       - name: Get Status 
         shell: bash
         run: |
