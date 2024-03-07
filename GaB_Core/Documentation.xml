@@ -255,6 +255,18 @@
         <member name="M:GaB_Core.Migrations.UnprotectedDb._0040.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb._00510">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._00510.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._00510.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._00510.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
             <summary>
             Таблица, отвечающая за инфомрацию о клиентах 
