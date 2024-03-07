@@ -18,7 +18,7 @@ namespace GaB_Core.Controllers
         /// <returns>
         /// Список всех вендиговых аппаратов
         /// </returns>
-        [HttpGet(Name = "GetAllVendingMachneInformation")]
+        [HttpGet("GetAllVendingMachneInformation")]
         public IEnumerable<VendingMachine> GetAllVendingMachneInformation()
         {
             return Program.GetUnprotectedContext().VendingMachines;

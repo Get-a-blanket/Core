@@ -54,6 +54,51 @@
             Список всех вендиговых аппаратов
             </returns>
         </member>
+        <member name="T:GaB_Core.Controllers.SystemController">
+            <summary>
+            Котроллер проверки работы системы
+            </summary>
+        </member>
+        <member name="M:GaB_Core.Controllers.SystemController.GetProtectedDBMigrations">
+            <summary>
+            Получить миграции защищенной базы данных
+            </summary>
+        </member>
+        <member name="M:GaB_Core.Controllers.SystemController.GetUnprotectedDBMigrations">
+            <summary>
+            Получить миграции незащищенной базы данных
+            </summary>
+        </member>
+        <member name="M:GaB_Core.Controllers.SystemController.Status">
+            <summary>
+            Получить статус системы
+            </summary>
+        </member>
+        <member name="T:GaB_Core.Controllers.SystemControllerModels.Status">
+            <summary>
+            Статус системы
+            </summary>
+        </member>
+        <member name="P:GaB_Core.Controllers.SystemControllerModels.Status.DateTime">
+            <summary>
+            Текущее время на машине
+            </summary>
+        </member>
+        <member name="P:GaB_Core.Controllers.SystemControllerModels.Status.Version">
+            <summary>
+            Версия Core
+            </summary>
+        </member>
+        <member name="P:GaB_Core.Controllers.SystemControllerModels.Status.ProtectedDBVersion">
+            <summary>
+            Возможность подключения к защищенной базе данных
+            </summary>
+        </member>
+        <member name="P:GaB_Core.Controllers.SystemControllerModels.Status.UnprotectedDBVersion">
+            <summary>
+            Возможность подключения к незащищенной базе данных
+            </summary>
+        </member>
         <member name="T:GaB_Core.Migrations.InitialCreate">
             <inheritdoc />
         </member>
@@ -112,6 +157,18 @@
             <inheritdoc />
         </member>
         <member name="M:GaB_Core.Migrations._0036.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.Migrations._0040">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0040.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0040.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._0040.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:GaB_Core.Migrations.UnprotectedDb.InitialCreate">
