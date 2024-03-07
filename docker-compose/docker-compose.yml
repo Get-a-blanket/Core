@@ -3,6 +3,9 @@ version: '3.4'
 services:
   gab_core:
     # image: ${DOCKER_REGISTRY-}gabcore
+    depends_on:
+      - postgresql
+    restart: unless-stopped
     build:
       context: ..
       dockerfile: GaB_Core/dev.Dockerfile
