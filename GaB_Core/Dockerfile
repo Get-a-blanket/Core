@@ -17,7 +17,7 @@ RUN dotnet build "./GaB_Core.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet dev-certs https --trust
+RUN dotnet dev-certs https
 RUN dotnet publish "./GaB_Core.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
