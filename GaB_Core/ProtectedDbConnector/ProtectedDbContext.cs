@@ -1,6 +1,5 @@
 ﻿using GaB_Core.ProtectedDbConnector.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 namespace GaB_Core.ProtectedDbConnector;
 
 public class ProtectedDbContext : DbContext

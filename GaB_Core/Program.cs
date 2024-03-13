@@ -1,4 +1,3 @@
-using GaB_Core.ProtectedDbConnector.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 namespace GaB_Core;
