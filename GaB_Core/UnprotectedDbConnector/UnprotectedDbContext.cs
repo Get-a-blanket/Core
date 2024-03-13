@@ -16,6 +16,10 @@ public class UnprotectedDbContext : DbContext
     {
         // Подключение к postgres со строкой подключения из настроек приложений
         options.UseNpgsql(Configuration.GetConnectionString("UnprotectedDatabase"));
+        if (Program.Application?.Environment.IsDevelopment() ?? false)
+        {
+            options.EnableSensitiveDataLogging(true);
+        }
     }
 
     /// <summary>

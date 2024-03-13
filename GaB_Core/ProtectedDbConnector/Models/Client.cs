@@ -7,16 +7,21 @@ namespace GaB_Core.ProtectedDbConnector.Models
         [Key]
         public Guid Id { get; set; }
 
-        //public Int16 PhoneRegionCodeId { get; set; } 
+        [Required]
+        public Int16 PhoneRegionCodeId { get; set; } 
 
-        public Int64 PhoneNumber { get; set; } 
+        [Required]
+        public Int64 PhoneNumber { get; set; }
 
-        public string Email { get; set; } 
+        public string? Email { get; set; }
 
+        [Required]
         public DateTime DateOfRegistration { get; set; }
 
+        [Required]
         public PhoneRegionCode PhoneRegionCode { get; set; }
 
+        [Required]
         public ICollection<ActiveBlanket> ActiveBlankets { get; set; }
 
     }

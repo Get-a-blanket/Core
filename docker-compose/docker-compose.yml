@@ -12,9 +12,9 @@ services:
     environment:
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
-    ports:
-      - "8080:8080"
-      - "8081:8081"
+    # ports:
+    #   - "8080:8080"
+    #   - "8081:8081"
 
   postgresql:
     image: postgres:16
@@ -23,10 +23,11 @@ services:
       POSTGRES_PASSWORD: admin
     volumes:
       - db-data:/var/lib/postgresql/data
+    ports:
+      - "5555:5432"
 
 networks:
   default:
   
 volumes:
   db-data:
-    external: true

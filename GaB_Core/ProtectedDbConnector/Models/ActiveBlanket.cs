@@ -8,14 +8,19 @@ namespace GaB_Core.ProtectedDbConnector.Models
         [Key]
         public Guid Id { get; set; }
 
-        //public Guid ClientId { get; set; } 
+        [Required]
+        public Guid ClientId { get; set; }
 
-        //public Guid PaymentTariffId { get; set; }
+        [Required]
+        public Guid PaymentTariffId { get; set; }
 
+        [Required]
         public DateTime DataOfIssue { get; set; }
 
+        [Required]
         public Client Client { get; set; }
 
+        [Required]
         public PaymentTariff PaymentTariff { get; set; }
     }
 }

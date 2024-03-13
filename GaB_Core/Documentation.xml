@@ -4,6 +4,20 @@
         <name>GaB_Core</name>
     </assembly>
     <members>
+        <member name="T:GaB_Core.Controllers.AuthController">
+            <summary>
+            Контроллер взаимодействия с сервисм Auth
+            </summary>
+        </member>
+        <member name="M:GaB_Core.Controllers.AuthController.GetClientId(System.Int16,System.Int64)">
+            <summary>
+            Получить Client Id по regionCode и phoneNumber
+            </summary>
+            <param name="phoneNumber">Телефонный номер в виде числа</param>
+            <param name="regionCodeId">Id регионального кода</param>
+            <response code="200">ClientId найден</response>
+            <response code="404">ClientId не найден</response>
+        </member>
         <member name="P:GaB_Core.Controllers.Example.Product.Name">
             <summary>
             The name of the product
@@ -41,18 +55,23 @@
             <response code="404">Product not found</response>
             <response code="500">Oops! Can't lookup your product right now</response>
         </member>
-        <member name="T:GaB_Core.Controllers.MapController">
+        <member name="T:GaB_Core.Controllers.PublicOperationsController">
             <summary>
-             Контроллер функций карты 
+             Контроллер функций нетребующих авторизации
             </summary>
         </member>
-        <member name="M:GaB_Core.Controllers.MapController.GetAllVendingMachneInformation">
+        <member name="M:GaB_Core.Controllers.PublicOperationsController.GetAllVendingMachneInformation">
             <summary>
             Выдать полный список всех доступных автоматов
             </summary>
             <returns>
             Список всех вендиговых аппаратов
             </returns>
+        </member>
+        <member name="M:GaB_Core.Controllers.PublicOperationsController.GetRegionCodes">
+            <summary>
+            Получить доступные региональные коды
+            </summary>
         </member>
         <member name="T:GaB_Core.Controllers.SystemController">
             <summary>
@@ -99,204 +118,22 @@
             Возможность подключения к незащищенной базе данных
             </summary>
         </member>
-        <member name="T:GaB_Core.Migrations.InitialCreate">
-            <inheritdoc />
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.PhoneRegionCode.Id">
+            <summary>
+            Номер региона
+            </summary>
         </member>
-        <member name="M:GaB_Core.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.FKs">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.FKs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.FKs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.FKs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations._0030">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0030.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0030.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0030.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations._0033">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0033.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0033.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0033.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations._0036">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0036.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0036.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0036.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations._0040">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0040.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0040.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._0040.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations._00510">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._00510.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._00510.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations._00510.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb.InitialCreate">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb.FKs">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.FKs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.FKs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.FKs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb.AddAddressVM">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.AddAddressVM.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.AddAddressVM.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb.AddAddressVM.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb._0030">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0030.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0030.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0030.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb._0033">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0033.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0033.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0033.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb._0036">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0036.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0036.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0036.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb._0040">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0040.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0040.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._0040.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb._00510">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._00510.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._00510.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._00510.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:GaB_Core.Migrations.UnprotectedDb._00511">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._00511.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._00511.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:GaB_Core.Migrations.UnprotectedDb._00511.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.PhoneRegionCode.Name">
+            <summary>
+            Кодовое имя региона
+            </summary>
         </member>
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
             <summary>
             Таблица, отвечающая за инфомрацию о клиентах 
             </summary>
         </member>
-        <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.PhoneRegionCode">
+        <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.PhoneRegionCodes">
             <summary>
             Таблица, отвечающая за регионы в номере 
             </summary>
@@ -306,7 +143,7 @@
             Таблица, отвечающая за выдачу пледов
             </summary>
         </member>
-        <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.PaymentTariff">
+        <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.PaymentTariffs">
             <summary>
             Таблица, отвечающая за тарифы 
             </summary>
