@@ -128,6 +128,18 @@
             Кодовое имя региона
             </summary>
         </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb._00512">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._00512.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._00512.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._00512.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
             <summary>
             Таблица, отвечающая за инфомрацию о клиентах 
