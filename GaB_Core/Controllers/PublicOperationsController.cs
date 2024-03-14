@@ -2,15 +2,16 @@
 using Microsoft.AspNetCore.Mvc;
 using GaB_Core.Controllers.MapControllerModels;
 using GaB_Core.UnprotectedDbConnector.Models;
+using GaB_Core.ProtectedDbConnector.Models;
 
 namespace GaB_Core.Controllers
 {
     /// <summary>
-    ///  Контроллер функций карты 
+    ///  Контроллер функций нетребующих авторизации
     /// </summary>
     [Route("[controller]")]
     [ApiController]
-    public class MapController : ControllerBase
+    public class PublicOperationsController : ControllerBase
     {
         /// <summary>
         /// Выдать полный список всех доступных автоматов
@@ -22,6 +23,15 @@ namespace GaB_Core.Controllers
         public IEnumerable<VendingMachine> GetAllVendingMachneInformation()
         {
             return Program.GetUnprotectedContext().VendingMachines;
+        }
+
+        /// <summary>
+        /// Получить доступные региональные коды
+        /// </summary>
+        [HttpGet("GetAllRegionCodes")]
+        public IEnumerable<PhoneRegionCode> GetRegionCodes()
+        {
+            return Program.GetProtectedContext().PhoneRegionCodes;
         }
     }
 }

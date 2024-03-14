@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 namespace GaB_Core;
 
@@ -31,17 +30,12 @@ internal class Program
         });
 
         var app = builder.Build();
-
+        Application = app;
         Configuration = app.Configuration;
         
         //DB setup
         GetProtectedContext().Database.Migrate();
         GetUnprotectedContext().Database.Migrate();
-        //using (var db = GetUnprotectedContext()) // тест добавления данных
-        //{
-        //    db.Add(new UnprotectedDbConnector.Models.VendingMachine { Id = new Guid(), NumberOfCellsWBlankets = 1, NumberOfEmptyCells = 1, Latitude = 1, Longitude = 1, Description = "1", Address = "1" });
-        //    db.SaveChanges();
-        //}
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
@@ -59,6 +53,8 @@ internal class Program
 
         app.Run();
     }
+
+    public static WebApplication Application { get; private set; }
 
     public static IConfiguration Configuration { get; private set; }
 
