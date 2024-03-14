@@ -22,7 +22,9 @@ namespace GaB_Core.Controllers
         /// <response code="200">ClientId найден</response>
         /// <response code="404">ClientId не найден</response>
         [HttpGet("GetClientId")]
-        public Guid GetClientId(Int16 regionCodeId, long phoneNumber)
+        [ProducesResponseType(typeof(Guid), 200)]
+        [ProducesResponseType(404)]
+        public Guid? GetClientId(Int16 regionCodeId, long phoneNumber)
         {
             Guid? clientId = Program.GetProtectedContext().Clients.FirstOrDefault(c => c.PhoneRegionCode.Id == regionCodeId && c.PhoneNumber == phoneNumber)?.Id;
             if (clientId != null)
@@ -32,7 +34,7 @@ namespace GaB_Core.Controllers
             else 
             {
                 Response.StatusCode = 404;
-                return Guid.Empty; 
+                return null; 
             }
         }
     }
