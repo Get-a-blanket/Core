@@ -118,15 +118,17 @@
             Возможность подключения к незащищенной базе данных
             </summary>
         </member>
-        <member name="P:GaB_Core.ProtectedDbConnector.Models.PhoneRegionCode.Id">
-            <summary>
-            Номер региона
-            </summary>
+        <member name="T:GaB_Core.Migrations._00512">
+            <inheritdoc />
         </member>
-        <member name="P:GaB_Core.ProtectedDbConnector.Models.PhoneRegionCode.Name">
-            <summary>
-            Кодовое имя региона
-            </summary>
+        <member name="M:GaB_Core.Migrations._00512.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._00512.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations._00512.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
         </member>
         <member name="T:GaB_Core.Migrations.UnprotectedDb._00512">
             <inheritdoc />
@@ -139,6 +141,28 @@
         </member>
         <member name="M:GaB_Core.Migrations.UnprotectedDb._00512.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="T:GaB_Core.Migrations.UnprotectedDb._0060">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0060.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0060.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:GaB_Core.Migrations.UnprotectedDb._0060.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.PhoneRegionCode.Id">
+            <summary>
+            Номер региона
+            </summary>
+        </member>
+        <member name="P:GaB_Core.ProtectedDbConnector.Models.PhoneRegionCode.Name">
+            <summary>
+            Кодовое имя региона
+            </summary>
         </member>
         <member name="P:GaB_Core.ProtectedDbConnector.ProtectedDbContext.Clients">
             <summary>
